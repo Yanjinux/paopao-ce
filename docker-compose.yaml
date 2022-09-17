@@ -8,7 +8,7 @@ services:
       MYSQL_DATABASE: paopao
       MYSQL_USER: paopao
       MYSQL_PASSWORD: paopao
-      MYSQL_RANDOM_ROOT_PASSWORD: yes
+      MYSQL_RANDOM_ROOT_PASSWORD: root
     volumes:
       - ./scripts/paopao-mysql.sql:/docker-entrypoint-initdb.d/paopao.sql
       - ./data/mysql/data:/var/lib/mysql
@@ -41,7 +41,7 @@ services:
       - paopao-network
   
   zinc:
-    image: public.ecr.aws/prabhat/zinc:latest
+    image: public.ecr.aws/zinclabs/zinc:latest
     user: root
     restart: always
     ports:
